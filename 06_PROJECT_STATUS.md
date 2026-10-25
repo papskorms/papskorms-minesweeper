@@ -18,8 +18,6 @@
 
 ## Risks and blockers
 
-- Tile reveal/flag gestures and drag-versus-click handling still affect the input model.
-- Score username/date ranking and in-progress record display remain undecided.
-- Time Attack can reach zero during a mistake animation; precedence remains open.
+- Most input bindings, tutorial behavior, mode switching, score-list policy, and game-over timing are now specified; remaining questions are tracked in DECISIONS.md.
 - Browser storage can fill or be cleared. Session-only fallback cannot restore a run after reload.
-- Browser targets, viewport navigation scale, theme control, and reduced-motion effects remain open.
+- Browser families and responsive intent are defined; versions, viewport range, and gesture edge cases remain open.

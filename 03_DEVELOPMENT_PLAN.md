@@ -2,7 +2,7 @@
 
 **Status:** Proposed sequence only. No milestone is a user-approved schedule.
 
-1. **Resolve remaining behavior questions:** tile reveal/flag gestures and pan threshold; mode-without-save choice; tutorial and theme preferences; score identity/order; mistake/timeout precedence; import behavior; reduced-motion effects; target browsers and viewport.
+1. **Resolve remaining behavior questions:** interrupted mistake timing; username registration/validation and tie-order details; theme persistence; pause-save semantics; import conflict replacement; browser versions, viewport boundaries, touch threshold, and keyboard selection boundary behavior.
 2. **Use the selected static architecture:** plain HTML/CSS/ES modules, DOM-rendered visible cells, seeded per-grid generation, IndexedDB, and GitHub Pages branch-root publishing. Details are in 02_ARCHITECTURE.md.
 3. **Build board rules:** random saved start cell among the four centers, safe zero, locked-boundary expansion stop, fixed per-grid mines, cross-boundary clues, tile actions, mistakes/lives, solve/unlock behavior.
 4. **Build persistence and modes:** per-mode saves, wall-clock Time Attack deadline, score records, storage-error session-only fallback, save import.

@@ -45,11 +45,11 @@ An ongoing score record is updated as safe cells are revealed and finalized on e
 
 ## Data flow and contracts
 
-1. Mode selection loads that mode’s IndexedDB run. If none exists, show the approved choice flow; its options remain unresolved.
+1. Mode selection loads that mode’s IndexedDB run. If none exists, create and begin a new run for that mode.
 2. A game action is passed to the rules module. It returns the next state and domain events such as safe cells revealed, mistake started, grid solved, or game over.
 3. The coordinator updates score, lives, deadline, completion, and unlock state, then persists the run and its ongoing score record.
 4. The renderer updates from state; it does not own game rules.
-5. On resume, compare the current wall clock with the saved deadline. A zero/expired Time Attack run ends immediately according to the approved timeout priority. Mistake-animation/timeout collision is still unresolved.
+5. On resume, compare the current wall clock with the saved deadline. A zero/expired Time Attack run ends immediately according to the approved timeout priority. This also applies during mistake animations; game over does not wait for animation.
 6. Browser storage failure shows a toast and switches to session-only play. The session cannot be recovered after close/reload.
 
 Conceptual API contracts:
@@ -74,7 +74,7 @@ The rules API receives time explicitly where timing affects outcomes, making it 
 
 ## Rendering and deployment trade-offs
 
-Use DOM controls for visible cells and CSS grid for boards. DOM is easier to label, focus, and interact with accessibly than Canvas; render only the current view to avoid DOM growth as the world expands. The board navigation controls are WASD, arrow keys, mouse drag, and touch drag. The exact reveal/flag gestures and click-versus-drag threshold remain open.
+Use DOM controls for visible cells and CSS grid for boards. DOM is easier to label, focus, and interact with accessibly than Canvas; render only the current view to avoid DOM growth as the world expands. The board navigation controls are WASD, arrow keys, mouse drag, and touch drag. Inputs: mouse click reveals, right click flags, left drag pans; WASD moves selection, arrows smoothly accelerate pan, Z reveals, X flags; touch tap reveals, 1.5-second hold flags, held drag pans. Verify Chrome, Opera, Brave and responsive common sizes; gesture thresholds and selection boundary behavior remain open.
 
 GitHub Pages branch-root publishing is the simplest fit because the app has no build step. A GitHub Actions deployment workflow may be added later if a build or automated publishing checks become useful.
 
