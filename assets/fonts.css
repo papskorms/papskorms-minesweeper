@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("./fonts/Nunito-Variable.ttf") format("truetype");
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+:root { font-family: "Nunito", system-ui, sans-serif; }

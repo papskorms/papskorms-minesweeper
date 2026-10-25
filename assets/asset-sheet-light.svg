@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="920" viewBox="0 0 1440 920">
+<defs>
+<g id="hidden"><rect width="68" height="68" fill="#cbd4e0" stroke="#9ba8b8" stroke-width="2"/><path d="M2 2h64" stroke="#edf1f6" stroke-width="2" opacity=".55"/></g>
+<g id="open"><rect width="68" height="68" fill="#eef2f7" stroke="#b8c4d2" stroke-width="2"/></g>
+</defs>
+<rect width="1440" height="920" fill="#f3f5f8"/><text x="60" y="70" fill="#182231" font-family="Nunito,Arial,sans-serif" font-size="38" font-weight="800">Papskorms Minesweeper — starter asset sheet</text>
+<text x="60" y="116" fill="#526071" font-family="Nunito,Arial,sans-serif" font-size="20">Nunito Variable · square cells · red flags · rounded interface icons</text>
+<text x="60" y="180" fill="#273649" font-family="Nunito,Arial,sans-serif" font-size="25" font-weight="700">CELL STATES</text>
+<g font-family="Nunito,Arial,sans-serif" font-size="17" fill="#526071" text-anchor="middle">
+<g transform="translate(60 210)"><use xlink:href="#hidden"/><text x="34" y="96">Hidden</text></g>
+<g transform="translate(155 210)"><use xlink:href="#open"/><text x="34" y="96">Blank</text></g>
+<g transform="translate(250 210)"><use xlink:href="#open"/><text x="34" y="48" fill="#4285f4" font-size="37" font-weight="800">1</text><text x="34" y="96">Number 1</text></g>
+<g transform="translate(345 210)"><use xlink:href="#open"/><text x="34" y="48" fill="#34a853" font-size="37" font-weight="800">2</text><text x="34" y="96">Number 2</text></g>
+<g transform="translate(440 210)"><use xlink:href="#open"/><text x="34" y="48" fill="#ea4335" font-size="37" font-weight="800">3</text><text x="34" y="96">Number 3</text></g>
+<g transform="translate(535 210)"><use xlink:href="#open"/><text x="34" y="48" fill="#263b9a" font-size="37" font-weight="800">4</text><text x="34" y="96">Number 4</text></g>
+<g transform="translate(630 210)"><use xlink:href="#open"/><text x="34" y="48" fill="#7f1d2d" font-size="37" font-weight="800">5</text><text x="34" y="96">Number 5</text></g>
+<g transform="translate(725 210)"><use xlink:href="#open"/><text x="34" y="48" fill="#138a9e" font-size="37" font-weight="800">6</text><text x="34" y="96">Number 6</text></g>
+<g transform="translate(820 210)"><use xlink:href="#hidden"/><path d="M27 50V19" stroke="#d7deea" stroke-width="4"/><path d="M29 20h23L44 31H29z" fill="#f04452" stroke="#c82133" stroke-width="2"/><text x="34" y="96">Flag</text></g>
+<g transform="translate(915 210)"><use xlink:href="#open"/><circle cx="34" cy="34" r="15" fill="#1c2430"/><path d="M34 9v8M34 51v8M9 34h8M51 34h8M16 16l6 6M52 16l-6 6M16 52l6-6M52 52l-6-6" stroke="#1c2430" stroke-width="4"/><text x="34" y="96">Mine</text></g>
+<g transform="translate(1010 210)"><use xlink:href="#open"/><rect width="68" height="68" fill="#e53946" opacity=".38"/><path d="m15 15 38 38m0-38L15 53" stroke="#b81627" stroke-width="5" stroke-linecap="round"/><text x="34" y="96">Mistake</text></g>
+<g transform="translate(1105 210)"><use xlink:href="#hidden"/><rect width="68" height="68" fill="#111927" opacity=".55"/><path d="M25 31v-5a9 9 0 0 1 18 0v5" fill="none" stroke="#8b98aa" stroke-width="4"/><rect x="21" y="30" width="26" height="22" rx="4" fill="#8b98aa"/><text x="34" y="96">Locked</text></g>
+</g>
+<text x="60" y="390" fill="#273649" font-family="Nunito,Arial,sans-serif" font-size="25" font-weight="700">INTERFACE ICONS</text>
+<g font-family="Nunito,Arial,sans-serif" font-size="17" fill="#526071" text-anchor="middle">
+<g transform="translate(100 430)"><path d="M16 25v-8a18 18 0 0 1 36 0v8" fill="none" stroke="#aebbd0" stroke-width="5"/><rect x="10" y="23" width="48" height="38" rx="6" fill="#aebbd0"/><circle cx="34" cy="39" r="4" fill="#263142"/><text x="34" y="92">Lock</text></g>
+<g transform="translate(280 430)"><path d="M34 60 12 40C-1 27 18 9 32 22l2 2 2-2C50 9 69 27 56 40z" fill="#ff5361" stroke="#dd3445" stroke-width="2"/><text x="34" y="92">Heart</text></g>
+<g transform="translate(460 430)"><circle cx="34" cy="34" r="24" fill="none" stroke="#aebbd0" stroke-width="5"/><path d="M34 19v16l10 6" fill="none" stroke="#aebbd0" stroke-width="5" stroke-linecap="round"/><text x="34" y="92">Clock</text></g>
+<g transform="translate(640 430)"><circle cx="34" cy="34" r="27" fill="#354359"/><path d="M25 29a10 10 0 1 1 16 7c-4 3-7 5-7 10" fill="none" stroke="#f4f7fb" stroke-width="4" stroke-linecap="round"/><circle cx="34" cy="53" r="2.5" fill="#f4f7fb"/><text x="34" y="92">Help</text></g>
+<g transform="translate(820 430)"><path d="m18 18 32 32m0-32L18 50" stroke="#526071" stroke-width="6" stroke-linecap="round"/><text x="34" y="92">Close</text></g>
+<g transform="translate(1000 430)"><rect x="15" y="13" width="12" height="42" rx="3" fill="#526071"/><rect x="41" y="13" width="12" height="42" rx="3" fill="#526071"/><text x="34" y="92">Pause</text></g>
+<g transform="translate(1180 430)"><path d="M20 11v46l38-23z" fill="#526071"/><text x="39" y="92">Resume</text></g>
+</g>
+<rect x="60" y="590" width="1320" height="250" rx="28" fill="#ffffff" stroke="#d1d8e2" stroke-width="2"/>
+<text x="100" y="650" fill="#273649" font-family="Nunito,Arial,sans-serif" font-size="25" font-weight="700">TYPE SPECIMEN · NUNITO VARIABLE</text>
+<text x="100" y="720" fill="#182231" font-family="Nunito,Arial,sans-serif" font-size="42" font-weight="800">Infinite Minesweeper</text>
+<text x="100" y="775" fill="#536174" font-family="Nunito,Arial,sans-serif" font-size="24">Rounded headings and clear UI copy: Reveal safe tiles · Unlock adjacent grids · Three lives</text>
+<text x="100" y="815" fill="#6c7788" font-family="Nunito,Arial,sans-serif" font-size="18">The tile artwork stays square; buttons, panels, and dialogs use rounded corners.</text>
+</svg>
+
