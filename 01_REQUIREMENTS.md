@@ -8,11 +8,11 @@ Status labels: **Approved** means directly confirmed by the user or explicitly d
 
 ## R-02 — Infinite grid world and unlocking
 
-**Status:** Approved. The world is arranged in 16×16 grids. Only the center grid is initially playable. Solving a grid unlocks its directly adjacent up/down/left/right grids; diagonals do not unlock it. A grid is solved by revealing every safe tile; flags are optional. **Goal:** progressively explore an unbounded field. **Outcome:** when a grid becomes solved, its orthogonally adjacent locked grids become playable. **Open:** how zero expansion interacts with locked-grid boundaries. **Acceptance:** locked grids cannot be interacted with; solving a grid unlocks only its orthogonal neighbors; flags are not required for completion.
+**Status:** Approved. The world is arranged in 16×16 grids. Only the center grid is initially playable. Solving a grid unlocks its directly adjacent up/down/left/right grids; diagonals do not unlock it. A grid is solved by revealing every safe tile; flags are optional. **Goal:** progressively explore an unbounded field. **Outcome:** when a grid becomes solved, its orthogonally adjacent locked grids become playable. **Rule:** zero expansion stops before entering a locked grid and does not reveal or alter any tile in that grid. **Acceptance:** locked grids cannot be interacted with; solving a grid unlocks only its orthogonal neighbors; flags are not required for completion.
 
 ## R-03 — Safe start
 
-**Status:** Approved. Before the game starts, only the center tile of the initial grid can be clicked. That center tile is safe and has clue value zero. Its normal zero expansion follows. **Goal:** avoid an initial guess. **Outcome:** clicking the center starts the game, reveals it, and begins normal expansion. **Open:** zero expansion into locked grids (R-02). **Acceptance:** other initial tiles cannot start or alter play; center reveal is always zero and never consumes a life.
+**Status:** Approved. Before the game starts, only the initial grid’s start tile can be clicked. At run creation, choose one of the four central cells at random; save that selection for the run. The selected tile is safe and has clue value zero. Its normal zero expansion follows, stopping at any locked-grid boundary. **Goal:** avoid an initial guess. **Outcome:** clicking the selected start cell starts the game, reveals it, and begins normal expansion. **Rule:** zero expansion stops at locked-grid boundaries, as specified in R-02. **Acceptance:** other initial tiles cannot start or alter play; the selected start cell is always zero and never consumes a life.
 
 ## R-04 — Mine density and clues
 
@@ -20,7 +20,7 @@ Status labels: **Approved** means directly confirmed by the user or explicitly d
 
 ## R-05 — Tile interactions
 
-**Status:** Approved. Revealing an already revealed tile does nothing. Flagging toggles a flag; a second flag action unflags it. A mine marked as a mistake cannot subsequently be unflagged or revealed again. A safe tile may be flagged without penalty. Only playable grids accept player interactions. **Goal:** predictable Minesweeper controls. **Open:** input gestures (right-click, touch, keyboard) and whether flags block reveal are unspecified. **Acceptance:** repeated reveal on a revealed tile has no effect; flag/unflag toggles an ordinary tile; safe-tile flags do not affect lives or completion; mistake mines remain locked after resolution.
+**Status:** Approved. Revealing an already revealed tile does nothing. Flagging toggles a flag; a second flag action unflags it. A mine marked as a mistake cannot subsequently be unflagged or revealed again. A safe tile may be flagged without penalty. Only playable grids accept player interactions. **Goal:** predictable Minesweeper controls. **Navigation:** WASD and arrow keys pan the board; holding and dragging the left mouse button pans; dragging on a touch screen pans. **Open:** tile reveal/flag gestures and how a click is distinguished from a pan. **Acceptance:** repeated reveal on a revealed tile has no effect; flag/unflag toggles an ordinary tile; safe-tile flags do not affect lives or completion; mistake mines remain locked after resolution.
 
 ## R-06 — Mine mistake and lives
 
@@ -28,7 +28,7 @@ Status labels: **Approved** means directly confirmed by the user or explicitly d
 
 ## R-07 — Modes and separate saves
 
-**Status:** Approved. Provide Default and Time Attack. Default has no countdown. A player may switch modes during an active game; each mode has its own save. **Goal:** support relaxed and timed play. **Outcome:** switching modes preserves the current mode's save and opens the other mode's saved state. **Open:** if the other mode has no saved run, whether to start immediately or show a choice. **Acceptance:** Default has no timer; switching modes does not overwrite the other mode's saved run.
+**Status:** Approved. Provide Default and Time Attack. Default has no countdown. A player may switch modes during an active game; each mode has its own save. **Goal:** support relaxed and timed play. **Outcome:** switching modes preserves the current mode's save and opens the other mode's saved state. **Rule:** when the selected mode has no saved run, present a choice. **Open:** the options and default selection in that choice. **Acceptance:** Default has no timer; switching modes does not overwrite the other mode's saved run.
 
 ## R-08 — Time Attack clock
 
@@ -44,7 +44,7 @@ Status labels: **Approved** means directly confirmed by the user or explicitly d
 
 ## R-11 — Browser saves and recovery
 
-**Status:** Approved. Save active games in browser storage so players can quit and resume in the same browser. Keep separate active saves by mode. Save on quit. If storage is unavailable or full, show an error toast. Time Attack elapsed time must continue while closed. Browser data clearing may remove saves; recovery is not guaranteed. **Goal:** resume interrupted play. **Open:** exact storage API, save schema/versioning, storage-error behavior beyond the toast, and import validation behavior are architecture/open decisions. Save-file import was approved; export was suggested but not confirmed. **Acceptance:** a saved run resumes with board, flags, revealed tiles, lives, mode, and timer state intact; storage failure displays a toast; cleared data is not represented as recoverable.
+**Status:** Approved. Save active games in browser storage so players can quit and resume in the same browser. Keep separate active saves by mode. Save on quit. Time Attack elapsed time must continue while closed. Browser data clearing may remove saves; recovery is not guaranteed. **Goal:** resume interrupted play. **Rule:** if browser storage is unavailable or full, show an error toast and continue in session-only mode; unsaved progress may be lost when the page closes or reloads. **Open:** save schema/versioning, migration, and save-import validation/conflict behavior are documented in DECISIONS.md. Save-file import was approved; export was suggested but not confirmed. **Acceptance:** a saved run resumes with board, flags, revealed tiles, lives, mode, and timer state intact; storage failure displays a toast; cleared data is not represented as recoverable.
 
 ## R-12 — Score and local records
 
@@ -52,7 +52,7 @@ Status labels: **Approved** means directly confirmed by the user or explicitly d
 
 ## R-13 — Tutorial
 
-**Status:** Approved. A question-mark button opens short tutorial text in a container over a slightly darkened board. The container has an X close button. It does not pause Time Attack. The tutorial opens automatically the first time the user plays a mode. **Goal:** explain controls and progression. **Open:** whether first-time status is tracked once globally or independently per mode. **Acceptance:** button opens tutorial; X closes it; backdrop is dimmed; automatic opening follows the chosen first-time scope; Time Attack keeps running.
+**Status:** Approved. A question-mark button opens short tutorial text in a container over a slightly darkened board. The container has an X close button. It does not pause Time Attack. The tutorial opens automatically the first time the user plays a mode. **Goal:** explain controls and progression. **Open:** whether first-time tutorial status is tracked once globally or independently per mode. **Acceptance:** button opens tutorial; X closes it; backdrop is dimmed; automatic opening follows the chosen first-time scope; Time Attack keeps running.
 
 ## R-14 — Lives display
 
@@ -68,4 +68,4 @@ Status labels: **Approved** means directly confirmed by the user or explicitly d
 
 ## R-17 — Browser and accessibility input
 
-**Status:** Open. Target browsers, mobile support, keyboard navigation, touch flagging, and accessibility needs beyond reduced motion have not been specified. Do not claim support until agreed and verified.
+**Status:** Partly approved. Board navigation uses WASD, arrow keys, mouse drag, and touch drag. Tile reveal/flag gestures, gesture thresholds, target browsers/screen sizes, and accessibility needs beyond reduced motion remain open. Do not claim support until agreed and verified.
