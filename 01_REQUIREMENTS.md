@@ -36,7 +36,7 @@ Status labels: **Approved** means directly confirmed by the user or explicitly d
 
 ## R-09 — Pause menu and quit
 
-**Status:** Approved. The pause menu presents Continue, Save, and Exit in that order. In Time Attack, the clock continues while this menu is open. Exit saves and returns to the main menu for mode selection. **Goal:** let players manage a run without suspending Time Attack. **Open:** whether pause blocks board input and whether Save writes the current save or creates a separate checkpoint. **Acceptance:** menu has the three named actions; Resume returns to play; Quit saves and returns to mode selection; timed play continues while paused.
+**Status:** Approved. The pause menu presents Continue, Save, and Exit in that order. In Time Attack, the clock continues while this menu is open. Exit saves and returns to the main menu for mode selection. **Goal:** let players manage a run without suspending Time Attack. **Open:** whether pause blocks board input and whether Save writes the current save or creates a separate checkpoint. **Acceptance:** Continue returns to play; Save is positioned between Continue and Exit; Exit saves and returns to mode selection; timed play continues while paused.
 
 ## R-10 — Game-over review
 

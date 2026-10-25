@@ -41,7 +41,7 @@ An active run contains schema version, run ID, mode, world seed, selected start 
 
 Represent each 256-cell state with compact bitsets where practical. Validate schema version and ranges when loading. Exact save-import conflict behavior and migration policy remain open.
 
-An ongoing score record is updated as safe cells are revealed and finalized on end/quit. Whether ongoing records appear in the ranked high-score view remains open.
+The active run score is updated as safe cells are revealed, but in-progress runs are excluded from ranked lists. On completion or quit, ask about optional registration; retain at most ten records per mode. Username rules are listed in DECISIONS.md.
 
 ## Data flow and contracts
 
@@ -88,4 +88,4 @@ GitHub Pages branch-root publishing is the simplest fit because the app has no b
 
 ## Still unresolved
 
-See DECISIONS.md for product decisions that still need answers, including pointer/touch reveal and flag actions, tutorial scope, score identity and tie details, theme choice, timed-game edge cases, import conflicts, reduced-motion effects, and browser/viewport support.
+See DECISIONS.md for product decisions that still need answers, including interrupted mistake timing, score registration details, theme persistence, pause-save behavior, import conflicts, and browser/viewport edge cases.
